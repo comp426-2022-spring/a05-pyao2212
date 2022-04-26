@@ -1,3 +1,8 @@
+/*
+    This is a JavaScript fie which is run to either initialize the log.db file (where the actual 
+    database data is stored) to sqlite format, or if the log.db file is already initialized, 
+    it simply exports the db object (which essentially manages the log.db file) for external use.
+*/
 "use strict";
 const database = require("better-sqlite3")
 const db = new database("log.db")

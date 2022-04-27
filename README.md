@@ -84,19 +84,26 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5000/app/flip/
 ```
 
 #### Response body
 
 ```
-
+{"flip":"tails"}
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 16
+ETag: W/"10-N9e0DDykqBPnqphc8f4bzHcjsuM"
+Date: Wed, 27 Apr 2022 00:40:13 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/flips/:number/ (GET)
@@ -104,19 +111,26 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5000/app/flips/3
 ```
 
 #### Response body
 
 ```
-
+{"raw":["tails","tails","heads"],"summary":{"tails":2,"heads":1}}
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 65
+ETag: W/"41-xFD5mLTl1U2bxcpTr2yjO1m6UQg"
+Date: Wed, 27 Apr 2022 00:41:53 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/flip/coin/ (GET)
@@ -124,19 +138,26 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5000/app/flip/coin
 ```
 
 #### Response body
 
 ```
-
+{"flip":"tails"}
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 16
+ETag: W/"10-N9e0DDykqBPnqphc8f4bzHcjsuM"
+Date: Wed, 27 Apr 2022 00:43:50 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/flip/call/:guess/ (GET)
@@ -144,19 +165,26 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5000/app/flip/call/heads
 ```
 
 #### Response body
 
 ```
-
+{"call":"heads","flip":"heads","result":"win"}
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 46
+ETag: W/"2e-U/q8iZ4JKqczXPIvtwiVRpEFlRc"
+Date: Wed, 27 Apr 2022 00:44:39 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/flip/call/ (POST)
@@ -218,41 +246,28 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5000/app/log/access
 ```
 
 #### Response body
 
 ```
-
+[{"id":1,"remoteaddr":"::1","remoteuser":null,"time":"1651007114811.0","method":"GET","url":"/app","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"},{"id":2,"remoteaddr":"::1","remoteuser":null,"time":"1651007115069.0","method":"GET","url":"/favicon.ico","protocol":"http","httpversion":"1.1","status":"200.0","referer":"http://localhost:5555/app","useragent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"},{"id":3,"remoteaddr":"::1","remoteuser":null,"time":"1651007125344.0","method":"GET","url":"/app/get","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"},{"id":4,"remoteaddr":"::1","remoteuser":null,"time":"1651007143959.0","method":"GET","url":"/app/flip/call/heads","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"},{"id":5,"remoteaddr":"::1","remoteuser":null,"time":"1651009067067.0","method":"GET","url":"/index","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 
+(KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"},{"id":6,"remoteaddr":"::1","remoteuser":null,"time":"1651009117813.0","method":"GET","url":"/","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"},{"id":7,"remoteaddr":"::1","remoteuser":null,"time":"1651009320423.0","method":"GET","url":"/app/","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.1645"},{"id":8,"remoteaddr":"::1","remoteuser":null,"time":"1651009558518.0","method":"POST","url":"/app/flip/coins/","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":9,"remoteaddr":"::1","remoteuser":null,"time":"1651009771606.0","method":"POST","url":"/app/flip/call/","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":10,"remoteaddr":"::1","remoteuser":null,"time":"1651009803794.0","method":"POST","url":"/app/flip/coins/","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":11,"remoteaddr":"::1","remoteuser":null,"time":"1651009970397.0","method":"POST","url":"/app/flip/call/","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":12,"remoteaddr":"::1","remoteuser":null,"time":"1651009978437.0","method":"POST","url":"/app/flip/coins/","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":13,"remoteaddr":"::1","remoteuser":null,"time":"1651010117345.0","method":"GET","url":"/app/","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":14,"remoteaddr":"::1","remoteuser":null,"time":"1651010157579.0","method":"GET","url":"/app/","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":15,"remoteaddr":"::1","remoteuser":null,"time":"1651010171586.0","method":"GET","url":"/app/flip","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":16,"remoteaddr":"::1","remoteuser":null,"time":"1651010256115.0","method":"GET","url":"/app/flip","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":17,"remoteaddr":"::1","remoteuser":null,"time":"1651010317892.0","method":"GET","url":"/app/flips/4","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":18,"remoteaddr":"::1","remoteuser":null,"time":"1651010428275.0","method":"GET","url":"/app/flip/coin","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":19,"remoteaddr":"::1","remoteuser":null,"time":"1651010528449.0","method":"GET","url":"/app/log/access","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":20,"remoteaddr":"::1","remoteuser":null,"time":"1651010638206.0","method":"GET","url":"/app/log/error","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":21,"remoteaddr":"::1","remoteuser":null,"time":"1651019871024.0","method":"GET","url":"/app/","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":22,"remoteaddr":"::1","remoteuser":null,"time":"1651019964231.0","method":"GET","url":"/app/","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":23,"remoteaddr":"::1","remoteuser":null,"time":"1651019973101.0","method":"GET","url":"/app/","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":24,"remoteaddr":"::1","remoteuser":null,"time":"1651019987529.0","method":"GET","url":"/app/","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":25,"remoteaddr":"::1","remoteuser":null,"time":"1651020013499.0","method":"GET","url":"/app/flip/","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":26,"remoteaddr":"::1","remoteuser":null,"time":"1651020113064.0","method":"GET","url":"/app/flips/3","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":27,"remoteaddr":"::1","remoteuser":null,"time":"1651020177810.0","method":"GET","url":"/app/flip/coin","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":28,"remoteaddr":"::1","remoteuser":null,"time":"1651020230869.0","method":"GET","url":"/app/flip/coin","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":29,"remoteaddr":"::1","remoteuser":null,"time":"1651020279640.0","method":"GET","url":"/app/flip/call/heads","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"},{"id":30,"remoteaddr":"::1","remoteuser":null,"time":"1651020393760.0","method":"GET","url":"/app/log/access","protocol":"http","httpversion":"1.1","status":"200.0","referer":null,"useragent":"curl/7.77.0"}]
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 6802
+ETag: W/"1a92-BahIlszTmTgU3/rCJJLBCYslfBs"
+Date: Wed, 27 Apr 2022 00:46:33 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
-
-### /app/log/access/ (GET)
-
-#### Request cURL
-
-```
-
-```
-
-#### Response body
-
-```
-
-```
-
-#### Response headers
-
-```
-
-```
-
 ### /app/log/error/ (GET)
 
 _Not yet implemented_

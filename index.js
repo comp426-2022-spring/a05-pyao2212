@@ -132,11 +132,16 @@ if (!debug) {
 }
 
 app.get('/app/', (req, res) => {
-    res.contentType('test/plain');
-    res.status(200).end(200 + ' ' + "Good" );
+    res.contentType('application/json');
+    res.status(200).json({message: "Your API works! (200)"});
 })
 
 app.get('/app/flip/', (req, res) => {
+    res.contentType('application/json');
+    res.status(200).json({ "flip" : coinFlip()});
+})
+
+app.get('/app/flip/coin', (req, res) => {
     res.contentType('application/json');
     res.status(200).json({ "flip" : coinFlip()});
 })

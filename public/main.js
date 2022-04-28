@@ -22,21 +22,41 @@ function flipMultipleCoins(val) {
         alert("Error! Please enter an integer value for number of flips")
         return
     }
-    else {
-        val = parseInt(val, 10)
+    val = parseInt(val, 10)
+    let flipString = " flips, with "
+    if (val <= 0) {
+        alert("Please enter 1 or more flips")
+        return
+    }
+    if (val == 1) {
+        flipString = " flip, with "
     }
     fetch("http://localhost:5000/app/flips/"+val)
         .then(res => res.json())
         .then(data => {
             const result = data.raw
             const summary = data.summary
+            let table = document.getElementById("displayTable");
+            let numRows = document.getElementById("displayTable").rows.length
+            for (let i = numRows - 1; i >= 1; i--) {
+                table.deleteRow(i)
+            }
             setTimeout(function(){
-                let table = document.getElementById("displayTable");
+                let resultSummary = document.getElementById("summary")
+                resultSummary.innerHTML = (parseInt(summary.tails) + parseInt(summary.heads)).toString() + flipString +
+                                          summary.heads.toString() + " heads and " + summary.tails.toString() + " tails."
                 for (let i = 0; i < parseInt(summary.tails) + parseInt(summary.heads); i++) {
-                    table.insertRow(-1);
-                    
+                    let newRow = table.insertRow(-1);
+                    let newCell0 = newRow.insertCell(0);
+                    let newCell1 = newRow.insertCell(1);
+                    let newCell2 = newRow.insertCell(2);
+                    let img = "<img width = '80' height = '80' src = 'assets/img/"+result[i]+".png' />"
+                    console.log(img)
+                    newCell0.appendChild(document.createTextNode('Flip '+ (i + 1)));
+                    newCell1.appendChild(document.createTextNode(result[i]))
+                    newCell2.innerHTML = img
                 }
-            }, 1000);
+            }, 200);
         })
 
 }

@@ -1,4 +1,11 @@
 // Focus div based on nav button click
+function changeNav(newDiv, otherDivs) {
+    for (let i = 0; i < otherDivs.length; i++) {
+        document.getElementById(otherDivs[i]).className = "hidden"
+    }
+    document.getElementById(newDiv).className = "active"
+}
+
 
 // Flip one coin and show coin image to match result when button clicked
 function flipOneCoin() {
@@ -11,7 +18,7 @@ function flipOneCoin() {
             setTimeout(function(){
                 document.getElementById("singleFlipRes").src="assets/img/"+result+".png";
                 document.getElementById("flipACoinRes").innerHTML = "Result: " + result + "!"
-            }, 1000);
+            }, 200);
         })
 }
 // Flip multiple coins and show coin images in table as well as summary results
@@ -87,6 +94,6 @@ function guessFlip(val) {
                 document.getElementById("guessResImg").src="assets/img/"+result+".png";
                 document.getElementById("guessRes").innerHTML = "Result: " + result
                 document.getElementById("winStatement").innerHTML = winStatement
-            }, 1000);
+            }, 200);
         })
 }

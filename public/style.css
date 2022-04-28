@@ -4,6 +4,8 @@ div.hidden {
 
 div.active {
   border: 5px solid red;
+  margin: 1rem;
+  padding: 5px;
 }
 
 table, th, td {

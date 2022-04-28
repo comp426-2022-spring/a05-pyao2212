@@ -4,6 +4,26 @@ function changeNav(newDiv, otherDivs) {
         document.getElementById(otherDivs[i]).className = "hidden"
     }
     document.getElementById(newDiv).className = "active"
+    if (newDiv === "single") {
+        document.getElementById("singleFlipRes").src="assets/img/coin.png";
+        document.getElementById("flipACoinRes").innerHTML = "Click button to flip!"
+    }
+    if (newDiv === "multi") {
+        document.getElementById("summary").innerHTML="";
+        document.getElementById("number").value = "";
+        let table = document.getElementById("displayTable");
+        let numRows = document.getElementById("displayTable").rows.length
+        for (let i = numRows - 1; i >= 1; i--) {
+            table.deleteRow(i)
+        }
+    } 
+    if (newDiv === "guess") {
+        document.getElementById("guessRes").innerHTML = "Result: "
+        document.getElementById("guessResImg").src="assets/img/coin.png";
+        document.getElementById("guessVal").innerHTML = "Your guess: "
+        document.getElementById("guessValImg").src="assets/img/coin.png";
+        document.getElementById("winStatement").innerHTML = ""
+    }
 }
 
 

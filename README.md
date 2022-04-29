@@ -219,7 +219,7 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-curl -X POST -H 'Content-Type: application/json' -d '{"number":"30"}' http://localhost:5000/app/flip/coins/`
+curl -X POST -H 'Content-Type: application/json' -d '{"number":"30"}' http://localhost:5000/app/flip/coins/
 ```
 
 #### Response body
@@ -275,19 +275,26 @@ _Not yet implemented_
 #### Request cURL
 
 ```
-
+curl http://localhost:5000/app/log/error
 ```
 
 #### Response body
 
 ```
-
+[{"id": 1, "error-type": "404", "time":"1651007114811.0"}, {"id": 2, "error-type": "500", "time":"1651007114932.0"}]
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 6802
+ETag: W/"1a92-BahIlszTmTgU3/rCJJLBCYslfBs"
+Date: Wed, 27 Apr 2022 00:46:33 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/user/login/ (POST)
@@ -297,19 +304,26 @@ _Not yet implemented_
 #### Request cURL
 
 ```
-
+curl -X POST -H 'Content-Type: application/json' -d '{"username":"user123", "password": "abc123"}' http://localhost:5000/app/login/
 ```
 
 #### Response body
 
 ```
-
+{"status": 200, "user-id": 2}
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 283
+ETag: W/"11b-9dPTqGfngSPFEOq4loChIlpdSIE"
+Date: Thu, 07 Apr 2022 15:23:35 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/user/new/ (POST)
@@ -319,19 +333,26 @@ _Not yet implemented_
 #### Request cURL
 
 ```
-
+curl -X POST -H 'Content-Type: application/json' -d '{"username":"user123", "password": "abc123", "email": "abc@gmail.com"}' http://localhost:5000/app/create_user/
 ```
 
 #### Response body
 
 ```
-
+{"status": 200, "message": "Successfully created user!"}
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 283
+ETag: W/"11b-9dPTqGfngSPFEOq4loChIlpdSIE"
+Date: Thu, 07 Apr 2022 15:23:35 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/user/update/ (PATCH)
@@ -341,19 +362,26 @@ _Not yet implemented_
 #### Request cURL
 
 ```
-
+curl -X PATCH -H 'Content-Type: application/json' -d '{"new_username":"user12345", "new_password": "abc12345", "new_email": "abcd123@gmail.com"}' http://localhost:5000/app/update_user/
 ```
 
 #### Response body
 
 ```
-
+{"status": 200, "message": "Successfully updated user info!", "new_username":"user12345", "new_password": "abc12345", "new_email": "abcd123@gmail.com"}
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 283
+ETag: W/"11b-9dPTqGfngSPFEOq4loChIlpdSIE"
+Date: Thu, 07 Apr 2022 15:23:35 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```
 
 ### /app/user/delete/ (DELETE)
@@ -363,17 +391,24 @@ _Not yet implemented_
 #### Request cURL
 
 ```
-
+curl -X DELETE -H 'Content-Type: application/json' -d '{"username":"user12345", "password": "abc12345"}' http://localhost:5000/app/delete_user/
 ```
 
 #### Response body
 
 ```
-
+{"status": 200, "message": "Successfully deleted user!", "deleted_username":"user12345"}
 ```
 
 #### Response headers
 
 ```
-
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 283
+ETag: W/"11b-9dPTqGfngSPFEOq4loChIlpdSIE"
+Date: Thu, 07 Apr 2022 15:23:35 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
 ```

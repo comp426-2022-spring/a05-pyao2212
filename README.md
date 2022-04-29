@@ -304,7 +304,7 @@ _Not yet implemented_
 #### Request cURL
 
 ```
-curl -X POST -H 'Content-Type: application/json' -d '{"username":"user123", "password": "abc123"}' http://localhost:5000/app/login/
+curl -X POST -H 'Content-Type: application/json' -d '{"username":"user123", "password": "abc123"}' http://localhost:5000/app/user/login/
 ```
 
 #### Response body
@@ -333,7 +333,7 @@ _Not yet implemented_
 #### Request cURL
 
 ```
-curl -X POST -H 'Content-Type: application/json' -d '{"username":"user123", "password": "abc123", "email": "abc@gmail.com"}' http://localhost:5000/app/create_user/
+curl -X POST -H 'Content-Type: application/json' -d '{"username":"user123", "password": "abc123", "email": "abc@gmail.com"}' http://localhost:5000/app/user/new/
 ```
 
 #### Response body
@@ -362,7 +362,7 @@ _Not yet implemented_
 #### Request cURL
 
 ```
-curl -X PATCH -H 'Content-Type: application/json' -d '{"new_username":"user12345", "new_password": "abc12345", "new_email": "abcd123@gmail.com"}' http://localhost:5000/app/update_user/
+curl -X PATCH -H 'Content-Type: application/json' -d '{"new_username":"user12345", "new_password": "abc12345", "new_email": "abcd123@gmail.com"}' http://localhost:5000/app/user/update/
 ```
 
 #### Response body
@@ -391,7 +391,7 @@ _Not yet implemented_
 #### Request cURL
 
 ```
-curl -X DELETE -H 'Content-Type: application/json' -d '{"username":"user12345", "password": "abc12345"}' http://localhost:5000/app/delete_user/
+curl -X DELETE -H 'Content-Type: application/json' -d '{"username":"user12345", "password": "abc12345"}' http://localhost:5000/app/user/delete/
 ```
 
 #### Response body
